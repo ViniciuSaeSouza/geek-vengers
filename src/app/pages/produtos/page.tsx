@@ -9,18 +9,6 @@ import { FaTrash } from "react-icons/fa";
 import { MdModeEditOutline } from "react-icons/md"
 import Image from "next/image"
 
-// import Image, { StaticImageData } from "next/image"
-
-// import funko from '../../../image/funko.png';
-// import caneca from '../../../image/caneca.png';
-// import hq from '../../../image/hq.png';
-
-// const images = {
-//     "caneca.png": caneca,
-//     "funko.png": funko,
-//     "hq.png": hq,
-// };
-
 export default function Produtos() {
 
 //   const navigate = useRouter()
@@ -84,8 +72,7 @@ export default function Produtos() {
                       <tr key={p.id}>
                           <td>{p.id}</td>
                           <td>{p.nome}
-                             {/* src={images[p.imagem]} */}
-                          <Image src={p.imagem} alt={p.nome} width={50} height={50}/>
+                          <Image src={p.imagem} alt={p.nome} width={60} height={60}/>
                             <br /> Modelo - {p.modelo}</td>
                           <td>{p.categoria}</td>
                           <td>{p.estoque}</td>
