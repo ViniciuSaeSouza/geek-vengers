@@ -1,0 +1,5 @@
+[{"id":1,"nome":"Celular", "imagem": "/image/caneca.png","modelo":2021,"categoria": "Canecas", "preco":1500,"estoque":15},
+{"id":2,"nome":"Tablet", "imagem": "/image/funko.png","modelo":2021, "categoria": "Bonecos", "preco":800,"estoque":5},
+{"id":3,"nome":"Notebook", "imagem": "/image/hq.png","modelo":2021, "categoria": "Revistas", "preco":2500,"estoque":3},
+{"id":4,"nome":"Smart Watch", "imagem": "/image/caneca.png","modelo":2021, "categoria": "Canecas", "preco":300,"estoque":20},
+{"id":5,"nome":"Fone de Ouvido", "imagem": "/image/caneca.png","modelo":2021, "categoria": "Canecas", "preco":200,"estoque":15}]
