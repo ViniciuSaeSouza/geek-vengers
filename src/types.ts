@@ -30,6 +30,14 @@ export type CardProdutoProps = {
     preco: number;
 }
 
+export type BannerProps = {
+    fundo: StaticImageData;
+    personagem: StaticImageData;
+    titulo: StaticImageData;
+    texto?: string;
+    textoBtn?: string;
+}
+
 export type CardCategoriaProps = {
     categoriaImg: StaticImageData;
     nomeCategoria: string;

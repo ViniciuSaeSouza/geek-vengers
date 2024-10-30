@@ -3,6 +3,7 @@ import { CardProduto } from "@/components/CardProduto";
 import Carrossel from "@/components/Carrossel";
 import { CardCategoriaProps, CardProdutoProps } from "@/types";
 import { Banner } from "@/components/Banner";
+import Link from "next/link";
 
  
 // IMAGENS
@@ -14,6 +15,10 @@ import categ2 from "../../public/image/imgChaveiro.png";
 import categ3 from "../../public/image/imgBoneco.png";
 import categ4 from "../../public/image/imgCaneca.png";
 import { CardCategoria } from "@/components/CardCategoria";
+
+import fundo from "../../public/image/fundoW.png";
+import personagem from "../../public/image/wanda.png";
+import titulo from "../../public/image/tituloBannerW.png";
 
 export default function Home() {
 
@@ -43,11 +48,11 @@ export default function Home() {
         <div className="flex flex-row flex-wrap justify-evenly gap-4 content-around">
           {produtos.map((p, i) => (<CardProduto key={i} bgColor={p.bgColor} categoria={p.categoria} titulo={p.titulo} descricao={p.descricao} img={p.img} preco={p.preco}/> ))}
         </div>
-        <button className="flex items-center mx-auto h-[15px] border border-black rounded-xl shadow-sm shadow-black/50 text-redMain font-roboto font-thin text-[18px] p-4 mb-6"> MAIS PRODUTOS </button>
-        <Banner/>
+        <button className="flex items-center mx-auto h-[15px] border border-black rounded-xl shadow-sm shadow-black/50 text-redMain font-roboto font-thin text-[18px] p-4 mb-6"> <Link href="/produtos"> MAIS PRODUTOS  </Link></button>
+        <Banner fundo={fundo} personagem={personagem} titulo={titulo}/>
 
-        <h2 className="font-luckiest text-redMain text-center text-5xl mb-10 mt-10 font-bold">Algumas categorias</h2>
-        <div className="flex flex-row flex-wrap justify-evenly gap-4 content-around mb-8">
+        <h2 className="font-luckiest text-redMain text-center text-5xl mb-11 mt-10 font-bold">Algumas categorias</h2>
+        <div className="flex flex-row flex-wrap justify-evenly gap-4 content-around mb-10">
             {categorias.map((c, i) => (<CardCategoria key={i} categoriaImg={c.categoriaImg} nomeCategoria={c.nomeCategoria}/>))}
         </div>
       </div>
