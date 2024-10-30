@@ -1,12 +1,61 @@
-import Image from "next/image";
-import banner from "@/image/banner-home.png"
+"use client"
+import { CardProduto } from "@/components/CardProduto";
+import Carrossel from "@/components/Carrossel";
+import { CardCategoriaProps, CardProdutoProps } from "@/types";
+import { Banner } from "@/components/Banner";
+import Link from "next/link";
+
+ 
+// IMAGENS
+import img1 from "../../public/image/funko.png";
+import img2 from "../../public/image/caneca.png";
+import img3 from "../../public/image/hq.png";
+import categ1 from "../../public/image/imgCamisa.png";
+import categ2 from "../../public/image/imgChaveiro.png";
+import categ3 from "../../public/image/imgBoneco.png";
+import categ4 from "../../public/image/imgCaneca.png";
+import { CardCategoria } from "@/components/CardCategoria";
+
+import fundo from "../../public/image/fundoW.png";
+import personagem from "../../public/image/wanda.png";
+import titulo from "../../public/image/tituloBannerW.png";
 
 export default function Home() {
-  // const  tailWind = "text-white font-bold flex items-center space-x-8 text-xl font-bebas links"
 
+  const produtos:CardProdutoProps[] = [
+    {categoria: "POP FUNKO", titulo: "POPFUNKO IRON MAN", descricao: "miniatura colecionável estilizada do icônico herói da Marvel, com o visual característico.", img: img1, preco: 180.00, bgColor: "bg-redCard"},
+    {categoria: "CANECA", titulo: "CANECA CAPITÃO AMÉRICA", descricao: "A Caneca Capitão América exibe o herói em ação junto ao seu icônico escudo, ideal para os fãs dos filmes.", img: img2, preco: 49.99, bgColor: "bg-blueCard"},
+    {categoria: "HQ", titulo: "QUEM É O PANTERA NEGRA?", descricao: "A HQ 'Quem é o Pantera Negra?' narra a origem de T'Challa como o herói e rei de Wakanda, protegendo sua nação.", img: img3, preco: 50.61, bgColor: "bg-blackCard"},
+    {categoria: "POP FUNKO", titulo: "POPFUNKO IRON MAN", descricao: "miniatura colecionável estilizada do icônico herói da Marvel, com o visual característico.", img: img1, preco: 180.00, bgColor: "bg-redCard"},
+    {categoria: "CANECA", titulo: "CANECA CAPITÃO AMÉRICA", descricao: "A Caneca Capitão América exibe o herói em ação junto ao seu icônico escudo, ideal para os fãs dos filmes.", img: img2, preco: 49.99, bgColor: "bg-blueCard"},
+    {categoria: "HQ", titulo: "QUEM É O PANTERA NEGRA?", descricao: "A HQ 'Quem é o Pantera Negra?' narra a origem de T'Challa como o herói e rei de Wakanda, protegendo sua nação.", img: img3, preco: 50.61, bgColor: "bg-blackCard"},
+
+  ]
+
+  const categorias:CardCategoriaProps[] = [
+    {categoriaImg: categ1, nomeCategoria: "Camisetas"},
+    {categoriaImg: categ2, nomeCategoria: "Chaveiros"},
+    {categoriaImg: categ3, nomeCategoria: "Bonecos"},
+    {categoriaImg: categ4, nomeCategoria: "Canecas"}
+  ]
+ 
   return (
-    <div className="bg-black flex justify-center">
-      <Image className= "max-w-[100%]" src={banner} alt="Imagem escrito marvel com fundo preto e os heróis da marvel compondo o fundo das letras"/>
-    </div>
+
+    <main className="grow">
+      <div>
+        <Carrossel/>
+        <h2 className="font-luckiest text-redMain text-center text-5xl mb-8 mt-8 font-bold">Alguns Produtos </h2>
+        <div className="flex flex-row flex-wrap justify-evenly gap-4 content-around">
+          {produtos.map((p, i) => (<CardProduto key={i} bgColor={p.bgColor} categoria={p.categoria} titulo={p.titulo} descricao={p.descricao} img={p.img} preco={p.preco}/> ))}
+        </div>
+        <button className="flex items-center mx-auto h-[15px] border border-black rounded-xl shadow-sm shadow-black/50 text-redMain font-roboto font-thin text-[18px] p-4 mb-6"> <Link href="/produtos"> MAIS PRODUTOS  </Link></button>
+        <Banner fundo={fundo} personagem={personagem} titulo={titulo}/>
+
+        <h2 className="font-luckiest text-redMain text-center text-5xl mb-11 mt-10 font-bold">Algumas categorias</h2>
+        <div className="flex flex-row flex-wrap justify-evenly gap-4 content-around mb-10">
+            {categorias.map((c, i) => (<CardCategoria key={i} categoriaImg={c.categoriaImg} nomeCategoria={c.nomeCategoria}/>))}
+        </div>
+      </div>
+    </main>
   );
 }

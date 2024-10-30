@@ -19,3 +19,26 @@ export type ModalProps = {
     onClose: () => void;
     children: React.ReactNode;
 }
+
+
+export type CardProdutoProps = {
+    bgColor: string;
+    categoria: string;
+    titulo: string;
+    descricao: string;
+    img: StaticImageData;
+    preco: number;
+}
+
+export type BannerProps = {
+    fundo: StaticImageData;
+    personagem: StaticImageData;
+    titulo: StaticImageData;
+    texto?: string;
+    textoBtn?: string;
+}
+
+export type CardCategoriaProps = {
+    categoriaImg: StaticImageData;
+    nomeCategoria: string;
+}
