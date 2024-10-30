@@ -78,7 +78,7 @@ export default function Produtos() {
                           <td>{p.estoque}</td>
                           <td>{p.preco}</td>
                           <td>
-                              <Link title="Editar" href={`/pages/cadastrar-produto/${p.id}`}>
+                              <Link title="Editar" href={`/editar-produto/${p.id}`}>
                                   <MdModeEditOutline /> {/* Editar */}
                               </Link>
                               <button title="Excluir">
