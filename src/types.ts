@@ -7,9 +7,9 @@ export type TiposMenu = {
 export type ProdutoProps = {
     id: number;
     nome: string;
-	imagem: string | StaticImageData;
-	modelo: number;
-	categoria: string;
+    imagem: string | StaticImageData | ArrayBuffer | null;  // Adicionando ArrayBuffer como tipo possível
+    modelo: number;
+    categoria: string;
     preco: number;
     estoque: number;
 }

@@ -22,38 +22,54 @@ export default function CadastrarProduto(){
 		estoque: 0,
 	})
 
-	const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-		const {name, value, files} = e.target;
-		if (name === 'imagem' && files){
-			setProduto({...produto, [name as keyof ProdutoProps]: files[0]})
-			alert("Imagem escolhida com sucesso!")
-		}else {
-			setProduto({...produto,[name]:value})
-		}
-	}
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const { name, value, files } = e.target;
 	
-	const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault()
+		if (name === "imagem" && files && files[0]) {
+			const file = files[0];
+			const reader = new FileReader();
+	
+			reader.onloadend = () => {
+				if (reader.result && typeof reader.result === 'string') {
+					setProduto((prevProduto) => ({
+						...prevProduto,
+						imagem: reader.result,  // Armazena a string no produto
+					}));
+					console.log("Imagem base64:", reader.result);  // Confere o valor base64
+				}
+			};
+	
+			reader.readAsDataURL(file);  // Converte o arquivo para base64
+		} else {
+			setProduto({ ...produto, [name]: value });
+		}
+	};
+	
+
+	
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+	
 		const cabecalho = {
-			method : "POST",
-			headers : { "Content-type": "application/json"},
-			body: JSON.stringify(produto)
-		}
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(produto),
+		};
+	
 		try {
-			const response = await fetch("http://localhost:3000/api/base-produtos", cabecalho)
-			
-			if(response.ok){
-				alert(`${produto.nome} cadastrado com Sucesso!`)
-				setProduto({id:0, nome: '', imagem: '', modelo: 0, categoria: '', estoque: 0, preco: 0})
-				navigate.push('/produtos')
-			}else {
-				alert("Erro ao cadastrar!")
+			const response = await fetch("http://localhost:3000/api/base-produtos", cabecalho);
+	
+			if (response.ok) {
+				alert(`${produto.nome} cadastrado com Sucesso!`);
+				setProduto({ id: 0, nome: '', imagem: '', modelo: 0, categoria: '', estoque: 0, preco: 0 });
+				navigate.push('/produtos');
+			} else {
+				alert("Erro ao cadastrar!");
 			}
-		} catch (error){
-			console.log("Erro ao cadastrar o produto: ", error)
+		} catch (error) {
+			console.log("Erro ao cadastrar o produto: ", error);
 		}
-		
-	}
+	};
 
 	let spanStyle = "text-redSpan text-3xl mr-2"
 	let inputStyle = "relative  mt-2 h-14 w-[100%] outline-black/60 text-xl font-thin border-2 rounded-sm pl-4"
