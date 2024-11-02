@@ -88,7 +88,7 @@ export default function Produtos() {
                           <td className="p-4 text-center">R$ {p.preco}</td>
                           <td className="p-4 text-center">
                             <div className="flex items-center space-x-3">
-                                <Link title="Editar" href={`/cadastrar-produto/${p.id}`} className="text-blue-600 hover:text-blue-800 transition">
+                                <Link title="Editar" href={`/editar-produto/${p.id}`} className="text-blue-600 hover:text-blue-800 transition">
                                     <MdModeEditOutline className="h-5 w-5" /> {/* Editar */}
                                 </Link>
                                 <button title="Excluir" onClick={() => idModal(p.id)} className="text-red-600 hover:text-red-800 transition">

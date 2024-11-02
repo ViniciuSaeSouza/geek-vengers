@@ -6,7 +6,7 @@ import { BannerProps } from "@/types";
 export function Banner({ fundo, personagem, titulo, texto, textoBtn }: BannerProps) {
     return (
         <div className="relative mt-28 mb-32">
-            <Image src={fundo} alt="Imagem" className="w-full" />
+            <Image src={fundo} alt="Imagem" className="w-[100vw]" />
             <div className="absolute top-0 left-auto right-0 bottom-0 flex items-center justify-center">
                 <Image src={personagem} alt="Imagem" className="" />
             </div>

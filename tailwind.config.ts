@@ -31,6 +31,7 @@ const config: Config = {
         blackCard: "#0E0E0E",
         blueMain: "#35618C",
         blueName: "#2B547C",
+        redSpan: "#B91A1C"
       },
     },
   },

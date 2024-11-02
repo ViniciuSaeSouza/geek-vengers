@@ -1,6 +1,6 @@
 import Menu from "./Menu";
 import { Logo } from "./Logo";
-
+import Link from "next/link";
 
 export default function Cabebecalho(){
 	
@@ -8,8 +8,8 @@ export default function Cabebecalho(){
 	
 	return (
 		<header className="bg-black py-6">
-			<div className="flex justify-between align-middle ps-12 pe-48">
-				<Logo/>
+			<div className="flex justify-between align-middle ps-12 xl:pe-36 md:pe-10">
+				<Link href={'/'}><Logo/></Link>
 				<Menu estilo={estilos}/>
 			</div>
 		</header>

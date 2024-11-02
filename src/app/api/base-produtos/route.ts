@@ -14,12 +14,11 @@ export async function GET() {
 export async function POST(request: Request) {
     // cwd: faz um método para poder buscar o conteúdo do arquivo
     const file = await fs.readFile(process.cwd() + '/src/data/base.json', 'utf-8')
-    const data = JSON.parse(file) // convertendo a str para um array de objetos
+    const data:Array<ProdutoProps> = JSON.parse(file) // convertendo a str para um array de objetos
 
-    const { nome, preco, estoque } = await request.json() // pegando as info do novo produto
-    const produto = { nome, preco, estoque } as ProdutoProps // guardando essas info no produto
-
-    produto.id = Number(Date.now()) // pegando o exato momento que a função é chamada
+    const { nome, imagem, modelo, categoria, estoque, preco} = await request.json() // pegando as info do novo produto
+    const produto = { nome, imagem, modelo, categoria, estoque, preco } as ProdutoProps // guardando essas info no produto
+    produto.id = data.length + 1
     data.push(produto)
 
     const json = JSON.stringify(data)
