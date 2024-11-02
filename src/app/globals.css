@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -9,4 +10,28 @@
 
 body{
   height: 100vh;
+}
+
+table{
+  @apply border border-gray-400
+}
+
+table, th, td{
+  @apply text-center
+}
+
+th{
+  @apply bg-blueMain text-white p-4
+}
+
+.btn{
+  @apply flex gap-2 items-center justify-center py-2 px-4 font-semibold shadow-md rounded-lg mt-2
+}
+
+.btn.btn-light {
+  @apply bg-white text-gray-500
+}
+ 
+.btn.btn-danger {
+  @apply bg-red-600 text-white shadow-red-400/40
 }
