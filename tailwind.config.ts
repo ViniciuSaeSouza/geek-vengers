@@ -19,6 +19,7 @@ const config: Config = {
         radioCanada: ['"Radio Canada Big"', 'sans-serif'],
         anton: ['"Anton SC"', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif'],
       },
       colors: {
         background: "var(--background)",
@@ -27,7 +28,10 @@ const config: Config = {
         redCard: "#8A171B",
         redWanda: "#6F1114",
         blueCard: "#10284E",
-        blackCard: "#0E0E0E"
+        blackCard: "#0E0E0E",
+        blueMain: "#35618C",
+        blueName: "#2B547C",
+        redSpan: "#B91A1C"
       },
     },
   },
