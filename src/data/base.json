@@ -1,1 +1,65 @@
-[{"id":1,"nome":"Funko Pop Iron Man","imagem":"/image/funko.png","modelo":2021,"categoria":"Bonecos","estoque":20,"preco":180},{"id":2,"nome":"Caneca Cap. América","imagem":"/image/caneca.png","modelo":2021,"categoria":"Canecas","estoque":14,"preco":49.99},{"id":3,"nome":"HQ Pantera Negra","imagem":"/image/hq.png","modelo":2018,"categoria":"Revistas","estoque":47,"preco":62.5},{"id":4,"nome":"Funko Pop Iron Man","imagem":"/image/funko.png","modelo":2021,"categoria":"Bonecos","estoque":20,"preco":180},{"id":5,"nome":"Caneca Cap. América","imagem":"/image/caneca.png","modelo":2021,"categoria":"Canecas","estoque":14,"preco":49.99}]
+[
+	{
+		"id": 1,
+		"nome": "Funko Pop Iron Man",
+		"imagem": "/image/funko.png",
+		"modelo": 2021,
+		"categoria": "Bonecos",
+		"estoque": 20,
+		"preco": 180
+	},
+	{
+		"id": 2,
+		"nome": "Caneca Cap. América",
+		"imagem": "/image/caneca.png",
+		"modelo": 2021,
+		"categoria": "Canecas",
+		"estoque": 14,
+		"preco": 49.99
+	},
+	{
+		"id": 3,
+		"nome": "HQ Pantera Negra",
+		"imagem": "/image/hq.png",
+		"modelo": 2018,
+		"categoria": "Revistas",
+		"estoque": 47,
+		"preco": 62.5
+	},
+	{
+		"id": 4,
+		"nome": "Funko Pop Iron Man",
+		"imagem": "/image/funko.png",
+		"modelo": 2021,
+		"categoria": "Bonecos",
+		"estoque": 20,
+		"preco": 180
+	},
+	{
+		"id": 5,
+		"nome": "Caneca Cap. América",
+		"imagem": "/image/caneca.png",
+		"modelo": 2021,
+		"categoria": "Canecas",
+		"estoque": 14,
+		"preco": 49.99
+	},
+	{
+		"nome": "Andissu",
+		"imagem": "",
+		"modelo": "1990",
+		"categoria": "Cabeçudo",
+		"estoque": "10",
+		"preco": "69.99",
+		"id": 6
+	},
+	{
+		"nome": "saes",
+		"imagem": "",
+		"modelo": "2011",
+		"categoria": "d",
+		"estoque": "10",
+		"preco": "10",
+		"id": 7
+	}
+]

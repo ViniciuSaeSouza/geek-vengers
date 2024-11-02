@@ -1,4 +1,5 @@
 "use client"
+import React from 'react'
 import { ProdutoProps } from "@/types";
 import { useState } from "react";
 import miranha from '@/../public/image/homemAranha.png'
@@ -6,10 +7,9 @@ import fundo from '@/../public/image/fundoAranha.png'
 import titulo from '@/../public/image/tituloBannerAranha.png'
 import Image from "next/image";
 import { Banner } from "@/components/Banner";
-import {useRouter } from "next/navigation";
-import FormularioCadastro from "@/components/FormularioCadastro";
-
-export default function CadastrarProduto(){
+import { Router, useRouter } from "next/router";
+export default function FormularioCadastro() {
+  
 	const navigate = useRouter()
 
 	const [produto, setProduto] = useState<ProdutoProps>({
