@@ -10,7 +10,7 @@ export default function Rodape() {
     const estilos = "text-white font-bold "
 
     return (
-        <footer className="bg-black min-w-full bottom-0">
+        <footer className="bg-black min-w-full bottom-0 mt-5">
             <div className="flex justify-around items-center py-4">
                 <Logo/>
                 <Menu estilo={estilos}/>
