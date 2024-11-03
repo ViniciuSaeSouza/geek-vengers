@@ -63,7 +63,7 @@ export default function CadastrarProduto(){
 		<div className="" >
 			<div className="flex flex-col">
 				<h2 className="block text-center font-luckiest text-redSpan font-bold text-3xl my-6">CADASTRO PRODUTO</h2>
-				<form onSubmit={handleSubmit} className="flex flex-col gap-10 font-raleway relative max-w-[70%] mx-auto">
+				<form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-10 font-raleway relative max-w-[70%] mx-auto">
 			
 					<div>
 						<label htmlFor="idNome" className={labelStyle}><span className={`${spanStyle}`}>|</span>Nome</label> <br />
