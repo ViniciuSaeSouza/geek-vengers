@@ -30,6 +30,7 @@ export default function CadastrarProduto(){
 	
 	const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
+		console.log(produto.imagem)
 		const cabecalho = {
 			method : "POST",
 			headers : { "Content-type": "application/json"},
@@ -90,7 +91,7 @@ export default function CadastrarProduto(){
 
 					<div>
 						<label htmlFor="idImagem">Link da Imagem: </label>
-						<input type="url" className={inputStyle}/>
+						<input type="text" id="idImagem" name="imagem" onChange={handleChange} className={inputStyle}/>
 					</div>
 
 					{/* <div>

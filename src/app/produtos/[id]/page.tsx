@@ -35,13 +35,9 @@ export default function EditarProduto({ params }: { params: { id: number } }) {
 
 	//Função para armazenar os dados digitados pelo usuário no obj produto
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const { name, value, files } = e.target;
-		if (name === "imagem" && files) {
-			setProduto({ ...produto, [name as keyof ProdutoProps]: files[0] });
-			alert("Imagem escolhida com sucesso!");
-		} else {
-			setProduto({ ...produto, [name]: value });
-		}
+		const { name, value } = e.target;
+		setProduto({ ...produto, [name]: value });
+		
 	};
 
 	//Função para enviar os dados atualizados para a API
@@ -113,13 +109,10 @@ export default function EditarProduto({ params }: { params: { id: number } }) {
 					</div>
 
 					<div>
-						<p className={labelStyle}><span className={spanStyle}>|</span>Imagem:</p>
-						<div className="text-center font-raleway flex flex-col gap-4 mt-6 border-dashed border-black/30 border-2 px-48 py-4">
-							<h3 className="text-xl">Selecione um arquivo aqui</h3>
-							<p className="opacity-50">PNG, JPG, JPEG</p>
-							<input type="file" id="idImagem" alt="enviar imagem" accept='image/jpg, image/png, image/jpeg' onChange={handleChange} />
-						</div>
+						<label htmlFor="idImagem">Link da Imagem: </label>
+						<input type="text" id="idImagem" name="imagem" onChange={handleChange} className={inputStyle}/>
 					</div>
+
 					<div className="text-center">
 						<button type='submit' className="bg-green-800 text-white px-10 text-3xl rounded-md py-4 mt-8">Atualizar Produto</button>
 					</div>
